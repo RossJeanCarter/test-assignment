@@ -8,6 +8,7 @@ import Loading from './Loading';
 import Error from './Error';
 import CommonUserCard from './CommonUserCard';
 import { User } from '../slices/usersSlice';
+import FavoritesLink from './FavoritesLink';
 
 const Users: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -44,14 +45,8 @@ const Users: React.FC = () => {
 
   return (
     <>
-      <Link to={appPaths.favorites}>
-        <div className="favorites-container">
-          Избранное
-          <span className="star-image">
-            <img src={require('../assets/star.png')} alt="star" />
-          </span>
-        </div>
-      </Link>
+      <FavoritesLink />
+
       <div className="users-container">
         {memoizedUsers.map((
           user,

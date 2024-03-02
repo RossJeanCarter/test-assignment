@@ -10,6 +10,7 @@ import { appPaths } from '../routes';
 import { User } from '../slices/usersSlice';
 import Loading from './Loading';
 import Error from './Error';
+import FavoritesLink from './FavoritesLink';
 
 const Posts = () => {
   const dispatch = useAppDispatch();
@@ -46,16 +47,9 @@ const Posts = () => {
     .find((user) => user.id === parseInt(userId, 10)) : undefined;
 
   return (
-    <>
 
-      <Link to={appPaths.favorites}>
-        <div className="favorites-container">
-          Избранное
-          <span className="star-image">
-            <img src={require('../assets/star.png')} alt="Star" />
-          </span>
-        </div>
-      </Link>
+    <>
+      <FavoritesLink />
 
       <div className="posts-container">
         <div className="posts-header">
