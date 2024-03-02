@@ -7,7 +7,7 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
   return data;
 });
 
-export const fetchUserPosts = createAsyncThunk('posts/fetchUserPosts', async (userId) => {
+export const fetchUserPosts = createAsyncThunk('posts/fetchUserPosts', async (userId: number) => {
   const { data } = await axios.get(apiRoutes.userPosts(userId));
   return data;
 });

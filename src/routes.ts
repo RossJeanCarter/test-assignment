@@ -8,5 +8,5 @@ export const appPaths = {
 
 export const apiRoutes = {
   users: () => [apiPath, 'users'].join('/'),
-  userPosts: (userId) => [apiPath, `posts?userId=${userId}`].join('/'),
+  userPosts: (userId: number) => [apiPath, `posts?userId=${userId}`].join('/'),
 };
