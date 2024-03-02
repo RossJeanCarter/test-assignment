@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React, { useMemo } from 'react';
-import { useAppSelector } from '../hooks';
-import UserList from './UserList';
+import { useAppSelector } from '../hooks/hooks';
+import UserList from '../components/UserList';
 import { User } from '../slices/usersSlice';
 
 const Favorites = () => {

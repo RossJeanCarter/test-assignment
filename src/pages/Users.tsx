@@ -1,12 +1,12 @@
 /* eslint-disable global-require */
 import React, { useEffect, useState, useMemo } from 'react';
-import { useAppDispatch, useAppSelector } from '../hooks';
+import { useAppDispatch, useAppSelector } from '../hooks/hooks';
 import { fetchUsers } from '../slices/thunks';
-import Loading from './Loading';
-import Error from './Error';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
 import { User } from '../slices/usersSlice';
-import FavoritesLink from './FavoritesLink';
-import UserList from './UserList';
+import FavoritesLink from '../components/FavoritesLink';
+import UserList from '../components/UserList';
 
 const Users: React.FC = () => {
   const dispatch = useAppDispatch();

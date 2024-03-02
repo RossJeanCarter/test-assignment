@@ -2,9 +2,9 @@ import React from 'react';
 import {
   BrowserRouter, Route, Routes,
 } from 'react-router-dom';
-import Users from './Users';
-import Posts from './Posts';
-import Favorites from './Favorites';
+import Users from '../pages/Users';
+import Posts from '../pages/Posts';
+import Favorites from '../pages/Favorites';
 import { appPaths } from '../routes';
 
 const App = () => {

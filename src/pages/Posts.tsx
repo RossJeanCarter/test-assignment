@@ -3,13 +3,13 @@
 /* eslint-disable global-require */
 import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../hooks';
+import { useAppDispatch, useAppSelector } from '../hooks/hooks';
 import { fetchUserPosts } from '../slices/thunks';
 import { addToFavorites } from '../slices/favoritesSlice';
 import { User } from '../slices/usersSlice';
-import Loading from './Loading';
-import Error from './Error';
-import FavoritesLink from './FavoritesLink';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
+import FavoritesLink from '../components/FavoritesLink';
 
 const Posts = () => {
   const dispatch = useAppDispatch();
