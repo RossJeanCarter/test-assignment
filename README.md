@@ -1,8 +1,8 @@
 [![linter-status](https://github.com/RossJeanCarter/test-assignment/actions/workflows/linter-check.yml/badge.svg)](https://github.com/RossJeanCarter/test-assignment/actions/workflows/linter-check.yml)
 
-# Getting Started with Create React App
+# Getting Started 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `make install`
 
 ## Available Scripts
 

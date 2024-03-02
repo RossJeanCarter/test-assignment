@@ -8,6 +8,8 @@ import { fetchUserPosts } from '../slices/thunks';
 import { addToFavorites } from '../slices/favoritesSlice';
 import { appPaths } from '../routes';
 import { User } from '../slices/usersSlice';
+import Loading from './Loading';
+import Error from './Error';
 
 const Posts = () => {
   const dispatch = useAppDispatch();
@@ -27,38 +29,11 @@ const Posts = () => {
   const memoizedPosts = useMemo(() => Object.values(posts), [posts]);
 
   if (loading) {
-    return (
-      <div className="loading">
-        <svg
-          className="clock"
-          width="50"
-          height="50"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g transform="rotate(90 12 12)">
-            <circle cx="12" cy="12" r="11" stroke="#333" strokeWidth="2" />
-            <path
-              d="M12 5V9L15 10"
-              stroke="#333"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </g>
-        </svg>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {
-    return (
-      <div className="error">
-        Error:
-        {error}
-      </div>
-    );
+    return <Error error={error} />;
   }
 
   const handleAddToFavorites = (user: User) => {
