@@ -1,14 +1,12 @@
 /* eslint-disable global-require */
 import React, { useEffect, useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { fetchUsers } from '../slices/thunks';
-import { appPaths } from '../routes';
 import Loading from './Loading';
 import Error from './Error';
-import CommonUserCard from './CommonUserCard';
 import { User } from '../slices/usersSlice';
 import FavoritesLink from './FavoritesLink';
+import UserList from './UserList';
 
 const Users: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -47,13 +45,7 @@ const Users: React.FC = () => {
     <>
       <FavoritesLink />
 
-      <div className="users-container">
-        {memoizedUsers.map((
-          user,
-        ) => (
-          <CommonUserCard key={user.id} user={user} />
-        ))}
-      </div>
+      <UserList users={memoizedUsers} />
       <div className="pagination">
         <button type="button" onClick={handlePreviousPage} disabled={currentPage === 1} className="button-previous" />
         <span className="current-page">{currentPage}</span>

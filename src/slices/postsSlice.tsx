@@ -31,7 +31,6 @@ const postsSlice = createSlice({
       .addCase(fetchUserPosts.fulfilled, (state, action: PayloadAction<Post[]>) => {
         state.loading = false;
         postsAdapter.setAll(state, action.payload);
-        console.log(state.entities, 'состояние постов');
       })
       .addCase(fetchUserPosts.rejected, (state, action) => {
         state.loading = false;

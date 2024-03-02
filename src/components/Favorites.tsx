@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React, { useMemo } from 'react';
 import { useAppSelector } from '../hooks';
-import CommonUserCard from './CommonUserCard';
+import UserList from './UserList';
 import { User } from '../slices/usersSlice';
 
 const Favorites = () => {
@@ -16,13 +16,7 @@ const Favorites = () => {
       {Object.keys(favorites).length === 0 ? (
         <div className="notAdded">Вы пока никого не добавили в избранное 😭</div>
       ) : (
-        <div className="users-container">
-          {memoizedFavorites.map((
-            user,
-          ) => (
-            <CommonUserCard key={user.id} user={user} />
-          ))}
-        </div>
+        <UserList users={memoizedFavorites} />
       )}
     </div>
   );
