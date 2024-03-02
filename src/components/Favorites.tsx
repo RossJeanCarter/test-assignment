@@ -1,12 +1,12 @@
 /* eslint-disable global-require */
-import { Link } from 'react-router-dom';
 import React, { useMemo } from 'react';
 import { useAppSelector } from '../hooks';
-import { appPaths } from '../routes';
+import CommonUserCard from './CommonUserCard';
+import { User } from '../slices/usersSlice';
 
 const Favorites = () => {
   const favorites = useAppSelector((state) => state.favorites.entities);
-  const memoizedFavorites = useMemo(() => Object.values(favorites), [favorites]);
+  const memoizedFavorites: User[] = useMemo(() => Object.values(favorites), [favorites]);
   return (
     <div>
       <div className="favorites-container">
@@ -17,19 +17,10 @@ const Favorites = () => {
         <div className="notAdded">Вы пока никого не добавили в избранное 😭</div>
       ) : (
         <div className="users-container">
-          {memoizedFavorites.map(({
-            id, name, username, email, phone, website,
-          }) => (
-            <div key={id} className="user-card">
-              <Link key={id} to={`${appPaths.posts}/${id}`} className="user-card">
-
-                <div className="bold">{name}</div>
-                <p className="medium">{username}</p>
-                <p className="medium">{email}</p>
-                <p className="medium">{phone}</p>
-                <p className="medium">{website}</p>
-              </Link>
-            </div>
+          {memoizedFavorites.map((
+            user,
+          ) => (
+            <CommonUserCard key={user.id} user={user} />
           ))}
         </div>
       )}
