@@ -1,11 +1,10 @@
+import React from 'react';
 import App from './components/App';
 
-const init = () => {
-  return (
-        
-           <App />    
-  
-  );
-};
+const init = () => (
+
+  <App />
+
+);
 
 export default init;

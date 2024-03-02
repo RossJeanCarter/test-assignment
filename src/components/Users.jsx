@@ -1,13 +1,8 @@
 import React from 'react';
 
+const Users = () => (
+  <h1>users</h1>
 
-const Users = () => {
-
-
-  return (
-<h1>users</h1>
-
-  );
-};
+);
 
 export default Users;
