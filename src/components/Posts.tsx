@@ -2,11 +2,10 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable global-require */
 import React, { useEffect, useMemo, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { fetchUserPosts } from '../slices/thunks';
 import { addToFavorites } from '../slices/favoritesSlice';
-import { appPaths } from '../routes';
 import { User } from '../slices/usersSlice';
 import Loading from './Loading';
 import Error from './Error';

@@ -1,5 +1,5 @@
 [![linter-status](https://github.com/RossJeanCarter/test-assignment/actions/workflows/linter-check.yml/badge.svg)](https://github.com/RossJeanCarter/test-assignment/actions/workflows/linter-check.yml)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/a97226e3bfe62ee3c094/maintainability)](https://codeclimate.com/github/RossJeanCarter/test-assignment/maintainability)
 # Getting Started 
 
 ### `make install`
