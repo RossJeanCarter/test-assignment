@@ -18,12 +18,10 @@ const favoritesSlice = createSlice({
   initialState: favoritesAdapter.getInitialState() as FavoritesState,
   reducers: {
     addToFavorites: favoritesAdapter.addOne,
-    removeFromFavorites: favoritesAdapter.removeOne,
-    clearFavorites: favoritesAdapter.removeAll,
   },
 
 });
 
-export const { addToFavorites, removeFromFavorites, clearFavorites } = favoritesSlice.actions;
+export const { addToFavorites } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;
