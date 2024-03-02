@@ -1,4 +1,4 @@
 lint:
 	npx eslint .
 install:
-	npm ci
+	npm install --legacy-peer-deps
